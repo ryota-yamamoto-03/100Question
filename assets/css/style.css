@@ -1,0 +1,107 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 50px auto;
+    text-align: center;
+}
+
+#animatedText {
+    font-size: 3rem;
+    font-family: 'Courier New', Courier, monospace;
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    width: fit-content;
+    margin: 0 auto; /* 真ん中に配置 */
+    animation: typing 2.5s steps(30, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 13ch; } /* "100Question"の文字数 */
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: black; }
+}
+
+i:hover{
+    color: #ffeb3b;
+}
+
+.accordion {
+    text-align: left;
+}
+
+.accordion-item {
+    margin: 10px 0;
+}
+
+.accordion-header {
+    background-color: #78c7c9;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+}
+
+.accordion-content {
+    display: none;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-left: 4px solid #78c7c9;
+}
+
+.accordion-content.show {
+    display: block;
+}
+
+a{
+    color: #333;
+}
+
+/* モバイル対応: 画面幅が768px以下の場合 */
+@media (max-width: 768px) {
+    .container {
+        width: 95%; /* 幅を縮めてスマホ対応 */
+    }
+
+    #animatedText {
+        font-size: 2.5rem; /* 文字サイズを少し小さく */
+    }
+
+    .accordion-button {
+        font-size: 1rem; /* ボタンサイズを縮小 */
+        padding: 10px; /* ボタンのパディングを調整 */
+    }
+
+    .accordion-body {
+        font-size: 0.9rem; /* ボディの文字サイズを縮小 */
+    }
+}
+
+/* スマートフォンサイズ: 画面幅が576px以下の場合 */
+@media (max-width: 576px) {
+    #animatedText {
+        font-size: 2rem; /* さらに小さくしてスマホ対応 */
+    }
+
+    .accordion-button {
+        font-size: 0.9rem; /* ボタンの文字サイズも縮小 */
+    }
+
+    .accordion-body {
+        font-size: 0.8rem; /* ボディの文字サイズも小さめ */
+    }
+}
